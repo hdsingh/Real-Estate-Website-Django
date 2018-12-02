@@ -12,16 +12,26 @@
     <!-- Custom -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Light box -->
-    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
 
     <title>Real Estate</title>
 </head>
 <body>
-    <p> This is base body. </p>
+    <!-- <p> This is base body. </p> -->
+  
+    <!-- Top bar -->
+    {% include  'partials/_topbar.html' %}
+    {% include  'partials/_navbar.html' %}
+    
     {% block content %}
 
     {% endblock%}
- 
+
+    <!-- Footer -->
+    {% include  'partials/_footer.html' %}
+
+
+    
     <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
     <script src="{% static 'js/main.js' %} "></script>
