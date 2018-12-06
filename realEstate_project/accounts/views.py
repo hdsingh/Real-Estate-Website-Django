@@ -24,6 +24,9 @@ def login(request):
         return render(request,'accounts/login.html')
 
 def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        messages.success(request,"Logged Out")
     return redirect("index")
 
 def register(request):

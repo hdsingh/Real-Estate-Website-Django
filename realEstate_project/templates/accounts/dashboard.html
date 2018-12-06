@@ -23,7 +23,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="index.html">
+                <a href="{% url 'index' %}">
                   <i class="fas fa-home"></i> Home</a>
               </li>
               <li class="breadcrumb-item active"> Dashboard</li>
@@ -32,6 +32,10 @@
         </div>
       </section>
     
+      <!-- Alert -->
+      {% include 'partials/_alerts.html'%}
+
+
       <section id="dashboard" class="py-4">
         <div class="container">
           <div class="row">
