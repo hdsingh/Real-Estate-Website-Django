@@ -21,6 +21,14 @@ def contact(request):
                             phone = phone,
                             message = message,
                             user_id =user_id,)
+
+        # Check if inquiry has already been made.
+        if request.user.is_authenticated:
+            user_id = request.user.id
+            has_contacted = Contact.objects.all().filter(listing_id = listing_id,user_id = user_id)
+            if has_contacted:
+                messages.error(request,"You have aleady made an inquiry")
+                return redirect('/listing/'+ listing_id)
         contact.save()
         
         messages.success(request,"Your request has been submitted. "+
